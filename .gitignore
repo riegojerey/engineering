@@ -5,6 +5,10 @@
 kicad-happy-test/analysis/
 kicad-happy-test/analysis-*/
 
+# Generated verification / review-merge output (same class as analysis/)
+kicad-happy-test/verify-out/
+kicad-happy-test/review_merged/
+
 # Python bytecode / caches
 __pycache__/
 *.py[cod]

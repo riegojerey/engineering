@@ -1,0 +1,14 @@
+# Generated artifacts — reproducible output, not design data.
+
+# KiCad analyzer output produced by the installed kicad skill
+# (analysis/<run-id>/ folders, manifests, and --output JSONs)
+kicad-happy-test/analysis/
+kicad-happy-test/analysis-*/
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+
+# OS / editor cruft
+.DS_Store
+*~

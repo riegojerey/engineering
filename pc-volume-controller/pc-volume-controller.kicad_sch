@@ -916,7 +916,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name "+5V""
+			(property "Description" "Power symbol creates a global label with name +5V"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1027,7 +1027,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name "GND""
+			(property "Description" "Power symbol creates a global label with name GND"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1687,7 +1687,7 @@
 		)
 		(uuid "97790e05-b9a8-5036-8ebb-aa396d39b91f")
 	)
-	(text "Power + PC link: Arduino Nano onboard USB (single cable).\n+5V pin supplies the five 10k pot dividers (~0.5 mA each = ~2.5 mA).\nADC reads ratiometrically against the 5V rail, so USB supply\ntolerance does not shift knob position. No external supply needed."
+	(text "Power + PC link: Arduino Nano onboard USB (single cable).\\n+5V pin supplies the five 10k pot dividers (~0.5 mA each = ~2.5 mA).\\nADC reads ratiometrically against the 5V rail, so USB supply\\ntolerance does not shift knob position. No external supply needed."
 		(exclude_from_sim no)
 		(at 40.0 60.0 0)
 		(effects

@@ -1,0 +1,4 @@
+Comment,Designator,Footprint,LCSC Part #
+100n,"C1,C2,C3,C4,C5,C6",CAP 0805,C49678
+10k,"RV1,RV2,RV3,RV4,RV5",POT THT,
+Arduino_Nano_v3.x,U1,MODULE THT,

@@ -43,9 +43,32 @@ B_Silkscreen, Edge_Cuts, plus PTH and NPTH drill files. Drill maps and the
 | RV1–RV5 | 10 kΩ linear | 9 mm panel pot | through-hole | **not verified** |
 | U1 | Arduino Nano v3.x | module, 30 pins | through-hole | **not verified** |
 | H1–H4 | M3 mounting holes | 3.2 mm NPTH | — | not a part |
+| FID1–FID3 | fiducials | 1 mm Cu / 2 mm mask | placed, **not assembled** | not a part |
 
 `C49678` is YAGEO `CC0805KRX7R9BB104`, 100 nF 50 V X7R ±10 % 0805 — confirmed
 against JLCPCB's and LCSC's own part pages.
+
+## Design-review fixes applied
+
+The board was run through an EMC and DFM review; four findings were fixed and
+re-verified:
+
+| Finding | Fix |
+|---|---|
+| `GP-002` no ground plane | GND pours on **both** F.Cu and B.Cu — 0.5 mm edge inset, 0.25 mm clearance, thermal reliefs |
+| `VS-002` no stitching | **36** ground stitching vias (26 on a 98 mm perimeter ring, plus 10 adjacent to signal layer transitions) |
+| `VP-001` via in pad ×6 | The six in-pad vias were moved off the C1–C6 pads from y = 23.50 to y = 21.50 and stubbed back with a 0.4 mm F.Cu trace. Via-in-pad wicks solder under JLCPCB's standard process. |
+| `FD-001` no fiducials | Three `Fiducial_1mm_Mask2mm` on F.Cu at (14, 50.5), (84, 50.5), (94, 34) |
+| `RP-001` return path | A 0.6 mm ground via within 0.95 mm of each of the ten `/VOL*` signal layer transitions |
+
+Verified after the changes: **DRC 1 violation** (the pre-existing cosmetic
+`lib_footprint_mismatch` on U1), **0 unconnected items**, **0 schematic-parity
+differences**, **ERC 0 violations**. EMC pre-compliance score 95.5/100.
+
+**The CPL deliberately excludes the fiducials.** They are placed but not
+assembled, and JLCPCB's PCBA upload rejects any CPL row whose designator is
+absent from the BOM. The generator now intersects the CPL against the BOM
+designator set and reports what it dropped.
 
 ## Read this before you choose assembly
 

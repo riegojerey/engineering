@@ -139,22 +139,35 @@ def main():
     # Mid Y deliberately shares the Gerber frame: KiCad writes the board at
     # Y = -H..0, and the drill file confirms it (a via at board y=23.5 appears
     # as Y-23.5). JLCPCB requires the CPL to use the Gerber origin.
+    #
+    # DESIGNATOR PARITY: JLCPCB's PCBA upload rejects any CPL row whose
+    # designator is absent from the BOM, with an unhelpful error. Fiducials
+    # (FID*), mounting holes and test points are all *placed* but never
+    # *assembled*, so they must be dropped here or the upload fails.
+    bom_refs = {ref for refs in groups.values() for ref in refs}
     pos = os.path.join(tmp, "pos.csv")
     run(["kicad-cli", "pcb", "export", "pos", "--format", "csv", "--units", "mm",
          "--side", "both", "--smd-only", "--output", pos, pcb])
     cpl = os.path.join(out, f"{name}-jlcpcb-cpl.csv")
+    dropped = []
     with open(pos, newline="", encoding="utf-8") as fh, \
             open(cpl, "w", newline="", encoding="utf-8") as oh:
         w = csv.writer(oh)
         w.writerow(["Designator", "Mid X", "Mid Y", "Layer", "Rotation"])
         rows = []
         for r in csv.DictReader(fh):
+            if r["Ref"] not in bom_refs:
+                dropped.append(r["Ref"])
+                continue
             rows.append([r["Ref"], f"{float(r['PosX']):.4f}", f"{float(r['PosY']):.4f}",
                          r["Side"].capitalize(), f"{float(r['Rot']):.1f}"])
         rows.sort(key=lambda x: (len(x[0]), x[0]))
         w.writerows(rows)
     print("=== JLCPCB CPL (SMD only, Gerber frame) ===")
     print(open(cpl, encoding="utf-8").read().rstrip())
+    if dropped:
+        print(f"\n  {len(dropped)} placed-but-not-assembled designator(s) dropped "
+              f"from the CPL: {', '.join(sorted(dropped))}")
     print("\n  Verify against JLCPCB's on-screen placement preview before paying.")
     shutil.rmtree(tmp, ignore_errors=True)
 

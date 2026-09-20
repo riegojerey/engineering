@@ -5,7 +5,7 @@
 	(uuid "1871d796-7bb9-43f9-8079-125c20ef5a39")
 	(paper "A4")
 	(lib_symbols
-				(symbol "Device:Battery"
+		(symbol "Device:Battery_Cell"
 			(pin_numbers
 				(hide yes)
 			)
@@ -25,7 +25,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "Battery"
+			(property "Value" "Battery_Cell"
 				(at 2.54 0 0)
 				(effects
 					(font
@@ -52,7 +52,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Multiple-cell battery"
+			(property "Description" "Single-cell battery"
 				(at 0 0 0)
 				(effects
 					(font
@@ -61,7 +61,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "batt voltage-source cell"
+			(property "ki_keywords" "battery cell"
 				(at 0 0 0)
 				(effects
 					(font
@@ -70,7 +70,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Battery_0_1"
+			(symbol "Battery_Cell_0_1"
 				(rectangle
 					(start -2.286 1.778)
 					(end 2.286 1.524)
@@ -83,30 +83,8 @@
 					)
 				)
 				(rectangle
-					(start -2.286 -1.27)
-					(end 2.286 -1.524)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
 					(start -1.524 1.016)
 					(end 1.524 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.524 -2.032)
-					(end 1.524 -2.54)
 					(stroke
 						(width 0)
 						(type default)
@@ -129,31 +107,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.508) (xy 0 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.016) (xy 0 -0.762)
+						(xy 0 0.762) (xy 0 0)
 					)
 					(stroke
 						(width 0)
@@ -188,7 +142,7 @@
 					)
 				)
 			)
-			(symbol "Battery_1_1"
+			(symbol "Battery_Cell_1_1"
 				(pin passive line
 					(at 0 5.08 270)
 					(length 2.54)
@@ -208,7 +162,7 @@
 					)
 				)
 				(pin passive line
-					(at 0 -5.08 90)
+					(at 0 -2.54 90)
 					(length 2.54)
 					(name "-"
 						(effects
@@ -804,111 +758,6 @@
 			)
 			(embedded_fonts no)
 		)
-			(symbol "power:PWR_FLAG"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#FLG"
-				(at 0 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "PWR_FLAG"
-				(at 0 3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Special symbol for telling ERC where power comes from"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "flag power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PWR_FLAG_0_0"
-				(pin power_out line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "PWR_FLAG_0_1"
-				(polyline
-					(pts
-						(xy 0 0)
-						(xy 0 1.27)
-						(xy -1.016 1.905)
-						(xy 0 2.54)
-						(xy 1.016 1.905)
-						(xy 0 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-		)
 	)
 	(wire
 		(pts
@@ -971,7 +820,7 @@
 		(uuid "fb68c988-148a-44cb-a183-fca5c0078da0")
 	)
 	(symbol
-		(lib_id "Device:Battery")
+		(lib_id "Device:Battery_Cell")
 		(at 121.92 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -989,7 +838,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "9V"
+		(property "Value" "10V"
 			(at 125.73 54.0384 0)
 			(effects
 				(font
@@ -998,7 +847,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Battery:BatteryHolder_MPD_BA9VPC_1xPP3"
+		(property "Footprint" ""
 			(at 121.92 53.086 90)
 			(effects
 				(font
@@ -1134,7 +983,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
+		(property "Footprint" ""
 			(at 132.08 76.2 0)
 			(effects
 				(font
@@ -1187,7 +1036,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 121.92 59.69 0)
+		(at 121.92 57.15 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1196,7 +1045,7 @@
 		(fields_autoplaced yes)
 		(uuid "23763297-7f49-456d-b87b-2172673a5d8c")
 		(property "Reference" "#PWR02"
-			(at 121.92 66.04 0)
+			(at 121.92 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1205,7 +1054,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 121.92 64.77 0)
+			(at 121.92 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1213,7 +1062,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 121.92 59.69 0)
+			(at 121.92 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1222,7 +1071,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 121.92 59.69 0)
+			(at 121.92 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1231,7 +1080,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 121.92 59.69 0)
+			(at 121.92 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1270,7 +1119,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "620"
+		(property "Value" "47"
 			(at 134.62 54.6099 0)
 			(effects
 				(font
@@ -1279,7 +1128,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" ""
 			(at 130.302 53.34 90)
 			(effects
 				(font
@@ -1323,7 +1172,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 132.08 63.5 90)
+		(at 132.08 63.5 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1340,7 +1189,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1N4148W"
+		(property "Value" "D"
 			(at 134.62 64.7699 90)
 			(effects
 				(font
@@ -1349,7 +1198,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" ""
 			(at 132.08 63.5 0)
 			(effects
 				(font
@@ -1408,105 +1257,6 @@
 				)
 			)
 		)
-	)
-	(wire
-		(pts
-			(xy 121.92 59.69)
-			(xy 127 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cdc412bf-b763-59d1-9d08-7b5b52d1feab")
-	)
-	(symbol
-		(lib_id "power:PWR_FLAG")
-		(at 127 59.69 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "addf02d0-53a6-5a30-8d82-75eebc44da2d")
-		(property "Reference" "#FLG01"
-			(at 127 57.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "PWR_FLAG"
-			(at 127 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 127 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 127 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 127 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f7d12964-06db-5ecc-9ae2-33717250ce98")
-		)
-		(instances
-			(project ""
-				(path "/1871d796-7bb9-43f9-8079-125c20ef5a39"
-					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(text "D2 (1N4148W) is SERIES reverse-polarity protection, not a rectifier.\nAnode faces R1, cathode faces D1 - both diodes point the same way.\nA reversed battery blocks the loop instead of destroying the LED.\nIt drops ~0.7 V by design; R1 is sized with that drop included.\nDo not remove D2 or flip it: a flipped D2 makes this an open circuit."
-		(exclude_from_sim no)
-		(at 25.4 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "afdc8114-abad-486c-a878-d3d9bbf6fa06")
-	)
-	(text "R1 sizing, 9 V pack:  I = (9 - Vf(LED) - Vf(D2)) / R1\n  red LED    Vf 2.0 V -> 10.2 mA; R1 dissipates 64 mW\n  blue/white Vf 3.2 V ->  8.2 mA; use 510R for 10 mA\nKeep I <= 20 mA continuous. 47R is NOT usable here:\nwith D2 forward that is 133 mA and 828 mW in R1 - it burns."
-		(exclude_from_sim no)
-		(at 25.4 78.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c35f68c0-a812-400f-aa4e-346d003d1c44")
 	)
 	(sheet_instances
 		(path "/"
